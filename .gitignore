@@ -1,0 +1,26 @@
+# Anchor
+.anchor
+target/
+test-ledger/
+
+# IDL
+**/*.so
+
+# Node
+node_modules/
+dist/
+.next/
+
+# Solana
+*.keypair
+
+# OS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+
