@@ -31,5 +31,9 @@ pub mod nanocredit {
             merchant_signature,
         )
     }
+    
+    pub fn verify_proximity(ctx: Context<VerifyProximity>) -> Result<()> {
+        instructions::verify_proximity::verify_proximity(ctx)
+    }
 }
 
