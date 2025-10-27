@@ -23,6 +23,12 @@ pub fn request_loan(
     proximity_proof.merchant_signature = merchant_signature;
     proximity_proof.verified = false; // Will be verified in next step
     
+    // Validate loan amount (min $0.25, max $25 in lamports)
+    require!(
+        amount >= 250_000 && amount <= 25_000_000,
+        ErrorCode::InvalidLoanAmount
+    );
+    
     // Initialize loan
     loan.borrower = ctx.accounts.customer.key();
     loan.merchant = ctx.accounts.merchant.key();
@@ -67,5 +73,11 @@ pub struct RequestLoan<'info> {
     pub merchant: UncheckedAccount<'info>,
     
     pub system_program: Program<'info, System>,
+}
+
+#[error_code]
+pub enum ErrorCode {
+    #[msg("Loan amount must be between $0.25 and $25")]
+    InvalidLoanAmount,
 }
 
