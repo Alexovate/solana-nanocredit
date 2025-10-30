@@ -35,8 +35,20 @@ app.prepare().then(() => {
     // Handle merchant broadcasting
     socket.on('merchant:broadcast', (data) => {
       console.log('📡 Broadcasting merchant data:', data.merchantPubkey)
-      // Broadcast to all other clients
-      socket.broadcast.emit('merchant:broadcast', data)
+      // Add simulated RSSI (signal strength) between -45 and -75 dBm
+      const rssi = -45 - Math.floor(Math.random() * 30)
+      // Broadcast to all other clients as 'merchant:detected' for customers
+      socket.broadcast.emit('merchant:detected', {
+        ...data,
+        rssi: rssi
+      })
+    })
+
+    // Handle loan requests from customers
+    socket.on('loan:request', (data) => {
+      console.log('💰 Loan request:', data.customerPubkey, '→', data.merchantPubkey)
+      // Send to all clients (merchant will filter by their pubkey)
+      io.emit('loan:request', data)
     })
 
     socket.on('disconnect', () => {
