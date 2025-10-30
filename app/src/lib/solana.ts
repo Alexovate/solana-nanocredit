@@ -1,5 +1,4 @@
 import { Connection, PublicKey, Transaction, SystemProgram, Keypair } from '@solana/web3.js'
-import * as anchor from '@coral-xyz/anchor'
 
 const PROGRAM_ID = new PublicKey('Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS')
 const RPC_ENDPOINT = 'http://localhost:8899'
