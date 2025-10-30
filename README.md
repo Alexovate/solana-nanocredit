@@ -119,10 +119,33 @@ For this hackathon, we simulate BLE via WebSockets (two browser tabs). In produc
 
 ## 🎬 Demo Flow
 
-1. **Merchant Tab:** Click "Start Broadcasting" → Generates keypair, broadcasts via WebSocket
-2. **Customer Tab:** Click "Start Scanning" → Detects merchant, shows RSSI (-65 dBm)
-3. **Customer Tab:** Click "Request Loan" → Generates Ed25519 signatures, creates proximity proof
-4. **Customer Tab:** Click "Submit to Solana" → Sends transaction to local validator
+### 1. Home Page
+![Home Page](screenshots/01-home-page.png)
+*Choose to enter as Merchant (store) or Customer (borrower)*
+
+### 2. Merchant Dashboard - Initial
+![Merchant Initial](screenshots/02-merchant-initial.png)
+*Merchant generates wallet and prepares to broadcast*
+
+### 3. Merchant Broadcasting
+![Merchant Broadcasting](screenshots/03-merchant-broadcasting.png)
+*Merchant actively broadcasting location via BLE (simulated WebSocket)*
+
+### 4. Customer Dashboard - Initial
+![Customer Initial](screenshots/04-customer-initial.png)
+*Customer generates wallet and prepares to scan for merchants*
+
+### 5. Customer Detects Merchant
+![Customer Detects Merchant](screenshots/05-customer-merchant-detected.png)
+*Customer scans and detects nearby merchant with RSSI signal strength*
+
+### 6. Loan Request Sent
+![Loan Requested](screenshots/06-customer-loan-requested.png)
+*All 4 steps complete: ✓ Scan → ✓ Select → ✓ Verify → ✓ Request*
+
+### 7. Merchant Receives Request
+![Merchant Receives Request](screenshots/07-merchant-loan-request-received.png)
+*Merchant sees pending loan request with customer details and distance*
 
 ## 🧪 Testing
 

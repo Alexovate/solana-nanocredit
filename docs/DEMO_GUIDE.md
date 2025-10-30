@@ -43,28 +43,29 @@ npm run dev
 
 #### Tab 1: Merchant Dashboard
 1. Navigate to `http://localhost:3000/merchant`
+   ![Merchant Initial](../screenshots/02-merchant-initial.png)
 2. **Say:** "This is a store owner in Manila. They generate a Solana keypair..."
 3. Click **"Start Broadcasting"**
+   ![Merchant Broadcasting](../screenshots/03-merchant-broadcasting.png)
 4. **Say:** "...and broadcast their presence via BLE (simulated with WebSockets for this demo)"
 
 #### Tab 2: Customer Dashboard
 1. Navigate to `http://localhost:3000/customer`
+   ![Customer Initial](../screenshots/04-customer-initial.png)
 2. **Say:** "A customer walks into the store with their phone..."
 3. Click **"Start Scanning"**
+   ![Customer Detects Merchant](../screenshots/05-customer-merchant-detected.png)
 4. **Say:** "...and detects the merchant at -65dBm, which means about 5 meters away"
 5. Click **"Request Loan"** on the detected merchant
+   ![Loan Requested](../screenshots/06-customer-loan-requested.png)
 6. **Say:** "The customer and merchant both sign a proximity proof using Ed25519"
-7. **Show:** The proximity proof JSON
-8. Click **"Submit to Solana"**
-9. **Say:** "This proof is submitted to Solana, where the smart contract verifies:
-   - Both signatures are valid
-   - RSSI is within 10 meter range
-   - Timestamp is fresh (< 5 minutes)
-   - Creates an on-chain loan account"
+7. **Show:** All 4 steps complete (✓ Scan → ✓ Select → ✓ Verify → ✓ Request)
 
-#### Show Success
-10. **Point to:** Transaction hash
-11. **Say:** "The loan is created on-chain. In production, USDC would be transferred automatically."
+#### Back to Tab 1: Merchant Receives Request
+8. Switch to merchant tab
+   ![Merchant Receives Request](../screenshots/07-merchant-loan-request-received.png)
+9. **Say:** "The merchant sees the pending request in real-time with customer details and distance verification"
+10. **Say:** "In production, the merchant would approve this, triggering an SPL Token transfer from their wallet to the customer"
 
 ### **Act 4: The Impact** (30 seconds)
 **Say:** 
