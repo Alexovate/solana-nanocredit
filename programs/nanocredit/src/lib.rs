@@ -35,5 +35,9 @@ pub mod nanocredit {
     pub fn verify_proximity(ctx: Context<VerifyProximity>) -> Result<()> {
         instructions::verify_proximity::verify_proximity(ctx)
     }
+    
+    pub fn approve_loan(ctx: Context<ApproveLoan>) -> Result<()> {
+        instructions::approve_loan::approve_loan(ctx)
+    }
 }
 

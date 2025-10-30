@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { Keypair, PublicKey } from '@solana/web3.js'
 import { getSocket } from '@/lib/socketClient'
+import { submitLoanRequest } from '@/lib/solana'
 import * as nacl from 'tweetnacl'
 
 type DetectedMerchant = {
@@ -28,6 +29,8 @@ export default function CustomerPage() {
   const [merchants, setMerchants] = useState<DetectedMerchant[]>([])
   const [selectedMerchant, setSelectedMerchant] = useState<DetectedMerchant | null>(null)
   const [proximityProof, setProximityProof] = useState<ProximityProof | null>(null)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [txHash, setTxHash] = useState<string>('')
 
   useEffect(() => {
     const kp = Keypair.generate()
@@ -89,6 +92,22 @@ export default function CustomerPage() {
     }
 
     setProximityProof(proof)
+  }
+
+  const handleSubmitToSolana = async () => {
+    if (!proximityProof || !keypair) return
+
+    setIsSubmitting(true)
+    try {
+      const loanAmount = 2000000 // $2 USDC (6 decimals)
+      const hash = await submitLoanRequest(keypair, proximityProof, loanAmount)
+      setTxHash(hash)
+      console.log('Transaction submitted:', hash)
+    } catch (error) {
+      console.error('Failed to submit transaction:', error)
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -172,11 +191,20 @@ export default function CustomerPage() {
               <p className="mb-2"><strong>Customer Sig:</strong> {Buffer.from(proximityProof.customerSignature).toString('hex').substring(0, 32)}...</p>
               <p><strong>Merchant Sig:</strong> {Buffer.from(proximityProof.merchantSignature).toString('hex').substring(0, 32)}...</p>
             </div>
-            <button
-              className="w-full mt-4 bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-lg transition"
-            >
-              Submit to Solana 🚀
-            </button>
+            {!txHash ? (
+              <button
+                onClick={handleSubmitToSolana}
+                disabled={isSubmitting}
+                className="w-full mt-4 bg-green-500 hover:bg-green-600 disabled:bg-gray-400 text-white font-semibold py-3 px-6 rounded-lg transition"
+              >
+                {isSubmitting ? 'Submitting...' : 'Submit to Solana 🚀'}
+              </button>
+            ) : (
+              <div className="mt-4 p-4 bg-green-50 border border-green-200 rounded-lg">
+                <p className="text-green-700 font-semibold mb-2">✅ Transaction Submitted!</p>
+                <p className="text-sm font-mono text-gray-600 break-all">{txHash}</p>
+              </div>
+            )}
           </div>
         )}
       </div>
