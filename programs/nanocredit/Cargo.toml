@@ -13,7 +13,10 @@ no-entrypoint = []
 no-idl = []
 no-log-ix-name = []
 cpi = ["no-entrypoint"]
-default = []
+# MVP mode: Skip identity verification (for hackathon/testing)
+# Production mode: Require Civic Pass verification
+mvp = []
+default = ["mvp"]
 
 [dependencies]
 anchor-lang = "0.29.0"
