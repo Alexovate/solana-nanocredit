@@ -24,3 +24,12 @@ dist/
 # Logs
 *.log
 
+# Media files (large videos/presentations)
+*.mov
+*.mp4
+*.avi
+*.mkv
+*.pptx
+*.ppt
+*.key
+
