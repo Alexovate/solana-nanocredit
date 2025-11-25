@@ -3,8 +3,22 @@
 **BLE Proximity-Verified Nano-Lending on Solana**
 
 > 🌐 **Website**: [nanocredit.world](https://www.nanocredit.world) | 🔬 **Innovation**: [BLE Proximity Research](https://www.nanocredit.world/innovation)  
-> 🌍 **Now Expanding**: Active market research across Philippines, Kenya, Brazil, and Argentina ($850M+ TAM)  
+> 💼 **Investor Pitch**: [NanoCredit-Solana-Investor-Pitch.pdf](investment/NanoCredit-Solana-Investor-Pitch.pdf) - Our vision to serve 85M+ unbanked  
+> 🌍 **Real-World Mission**: Active expansion across Philippines, Kenya, Brazil, and Argentina ($850M+ TAM)  
 > 📊 See [MARKET_EXPANSION.md](MARKET_EXPANSION.md) for our global rollout strategy
+
+## 🎯 Why We're Building This
+
+**This isn't just a hackathon project - it's our mission to bring fair credit to 85 million unbanked people.**
+
+We've already proven this works on World Chain with **94% repayment rate** across 50+ real loans in the Philippines. Now we're bringing it to Solana to scale globally. Every line of code we write is aimed at helping real people in real communities access credit that doesn't trap them in debt cycles.
+
+**Our commitment:**
+
+- ✅ Already deployed and serving users (World Chain pilot)
+- ✅ German government backing ($36K Mercator Fellowship)
+- ✅ Production-ready Solana contracts
+- 🎯 **Goal**: 100K users by end of 2026, 1M+ by 2028
 
 ## 🎯 The Problem
 
@@ -294,10 +308,23 @@ We're actively building awareness and partnerships across multiple channels:
 
 **For Investors:**
 
-- 💰 Seed Round: $2-5M for multi-market pilot (Q1 2026)
-- 📈 Series A: $20-50M for national expansion (2027)
-- 📊 Pitch Deck: Available on request
+- 💰 **Solana Grant**: Applying for $100K USDC for Philippines pilot (Q1 2026)
+- 💰 **Seed Round**: $2-5M for 4-market expansion (Q3 2026)
+- 📈 **Series A**: $20-50M for national scale (2027)
+- 📊 **Full Pitch Deck**: [NanoCredit-Solana-Investor-Pitch.pdf](investment/NanoCredit-Solana-Investor-Pitch.pdf)
 
 ---
 
-_Built for Solana Hackathon 2025 | Expanding Globally 2026-2027_
+## 🚀 Our Long-Term Vision
+
+**NanoCredit is not a hackathon project - it's a movement to democratize credit globally.**
+
+We're building this because we've seen firsthand how predatory lenders trap families in 300% APR debt cycles. We've witnessed how $2 can mean the difference between a child going to school or staying home. We've proven that technology can solve this - 94% repayment rate shows people want to repay when given fair terms.
+
+**The hackathon is just our entry point to the Solana ecosystem.** Our real goal is to serve 1 million families by 2028, bringing fair nano-credit to communities that banks have abandoned. Every feature we build, every partnership we forge, every line of code we write - it's all in service of real people who need access to fair credit.
+
+**Join us in making financial inclusion a reality, not just a buzzword.**
+
+---
+
+_Built for Solana Hackathon 2025 | Committed to Serving 1M+ Families by 2028_
